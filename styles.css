@@ -66,6 +66,10 @@ body {
     font-weight: 600;
   }
 
+  .energy {
+    font-style:unset;
+    font-weight:bold;
+  }
   @keyframes fadeIn {
     from {
       opacity: 0;

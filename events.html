@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calming & Reviving — Yoga, Pilates & Herbal Tea | Abuja</title>
+  <meta name="description" content="A calming and reviving outdoor class: gentle yoga, contrology (Pilates posture & alignment), and a talk on herbs + tea. Come as you are. " />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f7fbf9;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#2f855a; /* deep green */
+      --accent-2:#2c7a7b; /* teal */
+      --glass: rgba(255,255,255,0.6);
+      --radius:18px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; color:#0f172a;background:linear-gradient(180deg,var(--bg),#eef7f1);}
+    .wrap{max-width:var(--max);margin:28px auto;padding:28px}
+    header{display:flex;align-items:center;gap:20px}
+    .logo{display:flex;flex-direction:column}
+    .logo h1{margin:0;font-size:20px;color:var(--accent-2)}
+    .logo p{margin:0;color:var(--muted);font-size:13px}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:18px}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:0 6px 30px rgba(16,24,40,0.06);padding:26px}
+
+    .hero-left h2{margin:0 0 10px 0;font-size:28px;color:#0f172a}
+    .lead{color:var(--muted);margin-bottom:18px}
+
+    .pill{display:inline-flex;gap:8px;align-items:center;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px}
+
+    .cta{display:flex;gap:12px;margin-top:16px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:12px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-ghost{background:transparent;border:1px solid rgba(15,23,42,0.06);color:var(--accent-2)}
+
+    .event-meta{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+    .meta-row{display:flex;gap:10px;align-items:center;color:var(--muted)}
+
+    .hero-right{padding:18px;background:linear-gradient(180deg, rgba(47,133,90,0.06), rgba(44,122,123,0.04));border-radius:14px}
+    .time{font-weight:700;color:#0f172a}
+
+    .itinerary{display:grid;gap:12px;margin-top:18px}
+    .session{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:12px;border:1px dashed rgba(15,23,42,0.04);background:linear-gradient(180deg,#fff,rgba(255,255,255,0.9))}
+    .session .time{min-width:76px;color:var(--accent-2);font-weight:700}
+    .session h4{margin:0 0 6px 0}
+    .muted{color:var(--muted);font-size:14px}
+
+    .herbs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+
+    footer{margin-top:28px;padding:18px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.8),rgba(255,255,255,0.9));display:flex;justify-content:space-between;align-items:center}
+
+    /* signup form */
+    .signup{display:flex;flex-direction:column;gap:10px}
+    input,textarea,select{padding:12px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);font-size:14px}
+    label{font-size:13px;color:var(--muted)}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr;}
+      .herbs{grid-template-columns:1fr}
+    }
+
+    /* subtle animations */
+    .float{transform-origin:center;animation:float 6s ease-in-out infinite}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+
+    /* modal */
+    .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(3,7,18,0.4);visibility:hidden;opacity:0;transition:all .18s}
+    .modal.open{visibility:visible;opacity:1}
+    .modal-card{width:min(680px,92%);background:var(--card);border-radius:14px;padding:20px}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <h1>Calming & Reviving</h1>
+        <p>Yoga ● Contrology (Pilates) ● Herbs & Tea</p>
+      </div>
+      <div style="margin-left:auto;color:var(--muted)">Eden Botanical Gardens — Outdoor Wellness</div>
+    </header>
+
+    <div class="hero">
+      <div class="hero-left card">
+        <div class="pill">Paid · Outdoor · All Levels</div>
+        <h2>Revitilization — Gentle Yoga, Pilates Alignment & Herbal Tea</h2>
+        <p class="lead">The art of waking up, rebuilding strength with mindfulness. Learn about simple herbs and enjoy a warming cup of tea. </p>
+
+        <div class="cta">
+          <button class="btn btn-primary" id="rsvpBtn" href="https://selar.com/9647447724">Reserve a spot - 14,000NGN</button>
+          <button class="btn btn-ghost" id="itBtn">View Itinerary</button>
+        </div>
+
+        <div class="event-meta">
+          <div class="meta-row"><strong>Date:</strong>&nbsp;<span class="muted">Saturday, 14th August 2025</span></div>
+          <div class="meta-row"><strong>Time:</strong>&nbsp;<span class="muted">16:30PM — 18:30PM</span></div>
+          <div class="meta-row"><strong>Location:</strong>&nbsp;<span class="muted">Eden Botanical Gardens</span></div>
+        </div>
+
+        <div style="margin-top:14px" class="small">Spaces are limited — registering helps us prepare tea and materials. </div>
+
+        <hr style="margin:18px 0;border:none;border-top:1px solid rgba(15,23,42,0.04)">
+
+        <h3>What to bring</h3>
+        <ul class="small">
+          <li>Yoga mat or blanket</li>
+          <li>Water bottle</li>
+          <li>A notebook or journal (optional) </li>
+          <li>Comfortable clothes for movement</li>
+        </ul>
+
+      </div>
+
+      <aside class="hero-right card float">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div class="small">Start Time</div>
+            <div class="time">16:30PM</div>
+          </div>
+          <div style="text-align:right">
+            <div class="small">Duration</div>
+            <div class="time">2 hours</div>
+          </div>
+        </div>
+
+        <div class="itinerary">
+          <div class="session">
+            <div class="time">7:00</div>
+            <div>
+              <h4>Grounding Yoga Flow</h4>
+              <div class="muted">Gentle warm-up, breathwork and slow sun salutations to open the body.</div>
+            </div>
+          </div>
+
+          <div class="session">
+            <div class="time">8:00</div>
+            <div>
+              <h4>Contrology: Posture & Alignment (Pilates)</h4>
+              <div class="muted">Core-led exercises focusing on spinal alignment, breathing & muscle control.</div>
+            </div>
+          </div>
+
+          <div class="session">
+            <div class="time">9:00</div>
+            <div>
+              <h4>Herbs & Tea Talk</h4>
+              <div class="muted">Learn 3 simple herbs for calm and digestion, plus a guided tea tasting and mindful sipping.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top:12px;font-size:13px;color:var(--muted)">Beginners welcome. </div>
+
+      </aside>
+    </div>
+
+    <section style="display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:20px">
+      <div class="card">
+        <h3>About the Session</h3>
+        <p class="muted">This session is crafted as a nervous system reset: we combine breath-led yoga to release tension, Contrology-style Pilates to note and restore alignment and functional strength, and a herbal talk to bring the senses back to the relationship with plants.</p>
+
+        <h4 style="margin-top:14px">Session Goals</h4>
+        <ul class="small">
+          <li>Regulate the nervous system through breathwork and gentle movement</li>
+          <li>Improve posture and core engagement with alignment-focused exercises</li>
+          <li>Introduce approachable herbal remedies and mindful tea drinking</li>
+        </ul>
+
+        <h4 style="margin-top:14px">Instructor</h4>
+        <p class="small muted"><strong>Mfon & Wendy</strong> — movement guides and herbal enthusiasts. We prioritise small steps, inclusivity, and progress.</p>
+
+      </div>
+<!-- 
+      <aside class="card">
+        <h4>Reserve your Spot</h4>
+        <form id="signupForm" class="signup" onsubmit="https://selar.com/9647447724">
+          <div>
+            <label for="name">Full name</label>
+            <input id="name" required placeholder="e.g. Ama Johnson">
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" required placeholder="you@email.com">
+          </div>
+          <div>
+            <label for="notes">Any accessibility needs or questions <span class="small">(optional)</span></label>
+            <textarea id="notes" rows="3" placeholder="Tell us if you need extra support"></textarea>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="btn btn-primary" id="submitBtn">RSVP</button>
+            <div id="msg" class="small" style="color:var(--muted)"></div>
+          </div>
+          <div class="small" style="margin-top:8px;color:var(--muted)">We will not share your email.</div>
+        </form>
+      </aside> -->
+    </section>
+
+    <footer>
+      <div class="small">Questions? DM us on Instagram: @Balance_ee or @707_treat</div>
+      <div style="text-align:right" class="small">Come as you are • Bring a mat • Bring a Friend</div>
+    </footer>
+  </div>
+
+  <!-- Modal itinerary -->
+  <div id="modal" class="modal" role="dialog" aria-hidden="true">
+    <div class="modal-card card">
+      <h3>Full Itinerary</h3>
+      <p class="muted">Designed to be approachable and restorative.</p>
+      <ol>
+        <li><strong>7:00 — Grounding Yoga Flow (45 min)</strong>: gentle pranayama, joint warm-ups, slow sun salutations and long-held restorative poses.</li>
+        <li><strong>7:45 — Short break (10 min)</strong>: mindful water and breath.
+        </li>
+        <li><strong>8:00 — Contrology: Posture & Alignment (60 min)</strong>: pilates-style exercises focusing on core, pelvic placement and neutral spine with small props & mindful cueing.</li>
+        <li><strong>9:00 — Herbs & Tea (30 min)</strong>: short talk, tea tasting, and mindful sipping followed by a closing intention practice.</li>
+        <li><strong>9:30 — Stillness Nest / Journaling (30 min)</strong>: optional quiet time — sit, reflect, or try a guided 10-min body scan.</li>
+      </ol>
+      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:16px">
+        <button class="btn btn-ghost" id="closeModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('modal');
+    const itBtn = document.getElementById('itBtn');
+    const closeModal = document.getElementById('closeModal');
+    itBtn.addEventListener('click', ()=>{modal.classList.add('open');modal.setAttribute('aria-hidden','false')});
+    closeModal.addEventListener('click', ()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true')});
+    modal.addEventListener('click',(e)=>{if(e.target===modal){modal.classList.remove('open');modal.setAttribute('aria-hidden','true')}});
+
+    // simple RSVP behaviour (local-only)
+    const form = document.getElementById('signupForm');
+    const msg = document.getElementById('msg');
+    form.addEventListener('submit',(e)=>{
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if(!name||!email){msg.textContent='Please provide name and email.';return}
+      // fake submit -> show confirmation and clear
+      msg.textContent = 'Thanks — you are registered! Check your email for details.';
+      form.reset();
+      // small confetti-like feedback (text)
+      setTimeout(()=>{msg.textContent=''},5000);
+    });
+
+    // open RSVP quick from button
+    document.getElementById('rsvpBtn').addEventListener('click', ()=>{
+      document.getElementById('name').focus();
+      window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});
+    });
+  </script>
+</body>
+</html>

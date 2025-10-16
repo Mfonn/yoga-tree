@@ -48,6 +48,10 @@ body {
     background: #c1121f;
   }
 
+  .bold {
+    font-weight: bold;
+  }
+
   a:visited {
     color:#7F4EA6;
   }
